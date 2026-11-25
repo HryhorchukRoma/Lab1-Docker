@@ -1,0 +1,8 @@
+
+services:
+  weblab:
+    build: .
+    container_name: weblab-compose
+    ports:
+      - "8083:80"
+    restart: unless-stopped
