@@ -1,8 +1,97 @@
 
+name: weblab-project
+
 services:
   weblab:
-    build: .
+    image: weblab-compose:1.0
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
     container_name: weblab-compose
+    hostname: weblab-server
+
     ports:
       - "8083:80"
+
+    expose:
+      - "80"
+
     restart: unless-stopped
+    init: true
+    stop_signal: SIGQUIT
+    stop_grace_period: 20s
+
+    environment:
+      NGINX_ENTRYPOINT_QUIET_LOGS: "1"
+      TZ: Europe/Kyiv
+
+    networks:
+      weblab-network:
+        aliases:
+          - website
+          - nginx-server
+
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M
+        reservations:
+          cpus: "0.10"
+          memory: 64M
+
+    mem_limit: 256m
+    mem_reservation: 64m
+    cpus: 0.5
+    shm_size: 64mb
+
+    ulimits:
+      nofile:
+        soft: 1024
+        hard: 2048
+
+    security_opt:
+      - no-new-privileges:true
+
+    cap_drop:
+      - NET_RAW
+
+    labels:
+      project: "WebLab"
+      version: "1.0"
+      environment: "development"
+      maintainer: "WebLab Team"
+      description: "Static website using Docker Compose"
+
+    stdin_open: false
+    tty: false
+
+networks:
+  weblab-network:
+    name: weblab-network
+    driver: bridge
+
+    driver_opts:
+      com.docker.network.bridge.name: br-weblab
+
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
+          gateway: 172.28.0.1
