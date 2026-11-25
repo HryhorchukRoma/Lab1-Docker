@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Навчальний сайт для лабораторної роботи з Docker та Nginx.">
+  <title>WebLab — Головна</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><span class="logo-mark">W</span> WebLab</a>
+    <nav class="navigation" aria-label="Головна навігація">
+      <a class="active" href="index.html">Головна</a>
+      <a href="about.html">Про проєкт</a>
+      <a href="services.html">Можливості</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">ЛАБОРАТОРНА РОБОТА №1 · DOCKER</p>
+        <h1>Сучасний вебсайт.<br><span>Усередині контейнера.</span></h1>
+        <p class="hero-description">Навчальний проєкт демонструє розгортання статичного вебсайту за допомогою Docker та вебсервера Nginx.</p>
+        <a class="button" href="about.html">Дізнатися більше <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-visual" aria-label="Ілюстрація контейнеризованого вебсайту">
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
+        <div class="server-card">
+          <div class="server-top"><span></span><span></span><span></span></div>
+          <div class="server-icon">▣</div>
+          <strong>NGINX</strong>
+          <small>WEB SERVER</small>
+          <div class="server-status"><i></i> СЕРВЕР ПРАЦЮЄ</div>
+        </div>
+        <div class="floating-tag tag-docker">◇ Docker</div>
+        <div class="floating-tag tag-html">〈/〉 HTML + CSS</div>
+      </div>
+    </section>
+
+    <section class="section intro-section">
+      <div>
+        <p class="eyebrow">ПРО ЛАБОРАТОРНУ</p>
+        <h2>Від локальних файлів<br>до запущеного сайту</h2>
+      </div>
+      <p class="section-copy">Сайт складається з трьох HTML-сторінок і спільного CSS-файлу. Локальна папка буде підключена до контейнера Nginx через монтування, тому зміни у файлах одразу відображатимуться у браузері.</p>
+    </section>
+
+    <section class="feature-grid">
+      <article class="feature-card"><span class="feature-number">01</span><h3>Контейнеризація</h3><p>Запуск вебсервера Nginx в ізольованому Docker-контейнері.</p></article>
+      <article class="feature-card"><span class="feature-number">02</span><h3>Три сторінки</h3><p>Головна, інформаційна сторінка та сторінка можливостей із єдиною навігацією.</p></article>
+      <article class="feature-card"><span class="feature-number">03</span><h3>Живі зміни</h3><p>Оновлення вмісту сайту без повторного створення або перезапуску контейнера.</p></article>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>WebLab · Docker практикум</span><span>Статичний вебсайт на Nginx</span></footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebLab — Можливості</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><span class="logo-mark">W</span> WebLab</a>
+    <nav class="navigation" aria-label="Головна навігація">
+      <a href="index.html">Головна</a>
+      <a href="about.html">Про проєкт</a>
+      <a class="active" href="services.html">Можливості</a>
+    </nav>
+  </header>
+
+  <main class="inner-page">
+    <section class="page-heading">
+      <p class="eyebrow">WEBLAB / МОЖЛИВОСТІ</p>
+      <h1>Основні етапи <span>роботи</span></h1>
+      <p>Ключові можливості, які демонструє лабораторний проєкт.</p>
+    </section>
+
+    <section class="steps-list">
+      <article class="step-row"><span class="step-index">01</span><div><h2>Підготовка середовища</h2><p>Перевірка встановлення Docker та працездатності Docker Engine.</p></div><span class="step-state">DOCKER</span></article>
+      <article class="step-row"><span class="step-index">02</span><div><h2>Завантаження образу</h2><p>Отримання офіційного образу Nginx із Docker Hub.</p></div><span class="step-state">IMAGE</span></article>
+      <article class="step-row"><span class="step-index">03</span><div><h2>Запуск контейнера</h2><p>Публікація порту та монтування локальної папки з файлами сайту.</p></div><span class="step-state">CONTAINER</span></article>
+      <article class="step-row"><span class="step-index">04</span><div><h2>Перевірка оновлень</h2><p>Редагування HTML-файлу та перевірка змін у браузері без перезапуску контейнера.</p></div><span class="step-state">LIVE UPDATE</span></article>
+    </section>
+
+    <section class="notice-panel"><div class="notice-icon">↗</div><div><h2>Спробуйте самостійно</h2><p>Після запуску контейнера відкрийте <strong>http://localhost:8080</strong> у браузері. Для перевірки монтування змініть текст на будь-якій сторінці та оновіть її.</p></div></section>
+    <a class="text-link" href="index.html">← Повернутися на головну</a>
+  </main>
+
+  <footer class="site-footer"><span>WebLab · Docker практикум</span><span>Сторінка 3 із 3</span></footer>
+</body>
+</html>
